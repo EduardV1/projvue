@@ -62,4 +62,4 @@ jobs:
           scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i "~/prod_key.pem" dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/a23eduvilvil/web/a23eduvilvil.daw.inspedralbes.cat/public_html/ghactions-a23EduardVilaseca
 
 
-     - run: echo "🍏 This job's status is ${{ job.status }}."
+     - run: echo "🎉 This job's status is ${{ job.status }}."
