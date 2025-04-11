@@ -7,11 +7,11 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18] # Puedes ajustar según tu versión de Node
+        node-version: [18]
     steps:
       - uses: actions/checkout@v4
 
@@ -25,23 +25,6 @@ jobs:
       - run: npm run build --if-present
 
       - run: ls -la dist || echo "⚠️ Directori 'dist' no existeix!"
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: app-build
-          path: dist
-
-  Pujar-a-produccio-amb-SCP:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Descarregant l'arxiu construïtt
-        uses: actions/download-artifact@v4
-        with:
-          name: app-build
-          path: dist
 
       - name: Crear carpeta al servidor
         uses: appleboy/ssh-action@master
