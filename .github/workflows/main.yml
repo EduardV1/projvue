@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Descarregant l'arxiu construït
+      - name: Descarregant l'arxiu construïtt
         uses: actions/download-artifact@v4
         with:
           name: app-build
