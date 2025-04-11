@@ -2,7 +2,8 @@ name: Preparant per producció
 run-name: ${{ github.actor }} està pujant l'aplicació a PROD 🚀
 on:
   push:
-    branches: [ "main" ]
+    branches: 
+      - main
 jobs:
  build:
    runs-on: ubuntu-latest
